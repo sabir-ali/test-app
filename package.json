@@ -1,0 +1,37 @@
+{
+  "name": "test_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.ts",
+  "dependencies": {
+    "@tsed/common": "^5.4.0",
+    "@tsed/core": "^5.4.0",
+    "@tsed/di": "^5.4.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "knex": "^0.16.3",
+    "method-override": "^3.0.0",
+    "pg": "^7.9.0",
+    "ts-node-dev": "^1.0.0-pre.32"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "eslint": "^5.15.3",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.3.4000"
+  },
+  "scripts": {
+    "clean": "rimraf '{controllers}/**/*.{js,js.map}'",
+    "build": "npm run tsc",
+    "tslint": "tslint ./*.ts ./lib/*.ts",
+    "test": "npm run clean && npm run tsc && npm run tslint",
+    "tsc": "tsc --project tsconfig.json",
+    "tsc:w": "tsc --project tsconfig.json -w",
+    "start:dev": "nodemon --watch './**/*.ts' --ignore 'node_modules/**/*' --exec ts-node app.ts",
+    "start": "ts-node app.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
